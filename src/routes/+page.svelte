@@ -17,8 +17,7 @@
 		<Button onclick={() => club.scrollIntoView({ behavior: "smooth" })}
 			>The Club</Button
 		>
-		<a href="/lessons" class={buttonVariants({ variant: "outline" })}>Lessons</a
-		>
+		<a href="lessons" class={buttonVariants({ variant: "outline" })}>Lessons</a>
 	</div>
 </article>
 

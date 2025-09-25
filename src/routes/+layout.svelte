@@ -25,7 +25,8 @@
 		>
 			<div class="flex items-center">
 				<Sidebar.Trigger class="mr-2" />
-				<a href="/" class="flex items-center">
+				<!-- This href is necessary on github-->
+				<a href="/website" class="flex items-center">
 					<img src={logo} alt="Website logo" class="block size-5 relative" />
 					<span class="ml-1 font-mona font-bold">MARI CODEJAM</span>
 				</a>
