@@ -4,6 +4,9 @@
 		description: "Setting up python inside of VSCode"
 	}
 </script>
+<script>
+    import screenshot from "../../../lib/assets/lesson00-1-image.png"
+</script>
 
 # Lesson 0
 
@@ -17,5 +20,5 @@ First of all to learn python, you need to install it directly on your computer.
 3. After installing vscode, go on the extensions page by pressing the bottom buttom from the left column of buttons or by using `Ctrl+Shift+X (or Shift+Command+X on macos)` 
 
 4. There search python and you'll see a bunch of extensions. From those extensions located the one that looks like the figure below and click on install. You can trust&install the publisher(it is microsoft).
-![Python extensions screenshot vscode](http://localhost:5173/src/lib/assets/lesson00-1-image.png)
+![Python extensions screenshot vscode]({screenshot})
 
