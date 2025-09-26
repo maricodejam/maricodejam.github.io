@@ -22,3 +22,7 @@ First of all to learn python, you need to install it directly on your computer.
 4. There search python and you'll see a bunch of extensions. From those extensions located the one that looks like the figure below and click on install. You can trust&install the publisher(it is microsoft).
 ![Python extensions screenshot vscode]({screenshot})
 
+5. Now python should be installed. You can verify if the installation by going on your editor by cliking on the `...` at the top of the screen and by selectecting `Terminal` + `New Terminal`. This should open the terminal built in inside of vscode at the bottom of the viewport.
+
+6. Now inside the terminal type `python` then press `enter`. This will open the python shell, inside the shell enter `print("Hello World")` and press `Enter`. If you see an `Hello World` below what you just type, this means that python was installed sucessfully.
+
