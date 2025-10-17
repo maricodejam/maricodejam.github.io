@@ -2,18 +2,31 @@
 	import "../app.css";
 	import favicon from "$lib/assets/codejam_logo.png";
 	import logo from "$lib/assets/codejam_logo3.svg";
-	import { ModeWatcher, toggleMode } from "mode-watcher";
+	import { ModeWatcher, toggleMode, mode } from "mode-watcher";
 	import * as Sidebar from "$lib/components/ui/sidebar/index";
 	import AppSidebar from "$lib/components/AppSidebar.svelte";
 	import DiscordLogo from "$lib/components/svg/discord.svelte";
 	import SunIcon from "@lucide/svelte/icons/sun";
 	import MoonIcon from "@lucide/svelte/icons/moon";
 	import { Button } from "$lib/components/ui/button/index";
-	let { children } = $props();
+	import codeLightUrl from "highlight.js/styles/github.css?url";
+	import codeDarkUrl from "highlight.js/styles/github-dark.css?url";
+	import { setContext } from "svelte";
+
+	let { children, data } = $props();
+	const { posts } = data;
+
+	setContext("posts", { posts });
+
+	const currentCssTheme = $derived.by(() =>
+		mode.current == "light" ? codeLightUrl : codeDarkUrl,
+	);
 </script>
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<!-- svelte-ignore hydration_attribute_changed -->
+	<link rel="stylesheet" href={currentCssTheme} />
 </svelte:head>
 
 <ModeWatcher />
@@ -26,17 +39,12 @@
 			<div class="flex items-center">
 				<Sidebar.Trigger class="mr-2" />
 				<!-- This href is necessary on github-->
-				<a href="/" class="flex items-center">
+				<a href="/" class="flex items-center md:hidden">
 					<img src={logo} alt="Website logo" class="block size-5 relative" />
 					<span class="ml-1 font-mona font-bold">MARI CODEJAM</span>
 				</a>
 			</div>
-			<Button
-				onclick={toggleMode}
-				variant="outline"
-				size="icon"
-				class="size-5 rounded-xs"
-			>
+			<Button onclick={toggleMode} variant="outline" size="icon">
 				<SunIcon
 					class="rotate-0 scale-100 !transition-all dark:-rotate-90 dark:scale-0"
 				/>

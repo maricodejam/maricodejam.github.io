@@ -1,9 +1,11 @@
 <script lang="ts">
 	import { Separator } from "$lib/components/ui/separator/index";
-	const { data } = $props();
+	import { getContext } from "svelte";
+	import { type Posts } from "$lib/server/utils";
+	const { posts }: { posts: Posts } = getContext("posts");
 </script>
 
-{#each data.posts as post}
+{#each posts as post}
 	<a
 		href={`lessons/${post.url}`}
 		class="w-full h-10 border-2 border-border p-2 gap-3 flex"

@@ -1,4 +1,4 @@
-<script context="module">
+<script module>
 	export const metadata = {
 		title: "Lesson 0",
 		description: "Setting up python inside of VSCode"
@@ -9,6 +9,7 @@
 </script>
 
 # Lesson 0
+{metadata.description}
 
 Hello! Welcome to the marianopolis codejam club. Here we'll be learning the fundations of competitive programming.
 
